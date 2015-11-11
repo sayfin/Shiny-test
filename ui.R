@@ -26,5 +26,17 @@ shinyUI(navbarPage("Oil Model", tabPanel("Historical data",
             #h2("Commodity"), 
             selectInput("selection", label = "Commodity", choices = c("Brent", "FX"), selected = "Brent"))
    )),
-tabPanel("Stats"), navbarMenu("Simulation", tabPanel("Brent"), tabPanel("FX"))
+tabPanel("Stats", 
+         sidebarLayout(
+           sidebarPanel(
+             selectInput("checkbox_1", label = "Commodity", choices = c("Brent", "FX"), selected = "Brent")),
+           mainPanel(dataTableOutput("Prices_table"))
+           )
+         )
+         
+         
+         
+         , 
+
+navbarMenu("Simulation",tabPanel("Brent"), tabPanel("FX"))
 ))
