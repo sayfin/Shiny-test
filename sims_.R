@@ -34,3 +34,4 @@ colnames(iid_norm)<-colnames(spot_mthly)[2:ncol(spot_mthly)]
 
 #corr_noise <- log_ret_mthly[,2:length(log_ret_mthly)]%*%cholesky_d
 
+
